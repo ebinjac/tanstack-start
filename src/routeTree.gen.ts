@@ -9,159 +9,411 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TeamConfirmationRouteImport } from './routes/team-confirmation'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
-import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
-import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
-import { Route as DemoApiTqTodosRouteImport } from './routes/demo/api.tq-todos'
-import { Route as DemoApiNamesRouteImport } from './routes/demo/api.names'
-import { Route as DemoStartSsrIndexRouteImport } from './routes/demo/start.ssr.index'
-import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr.spa-mode'
-import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
-import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
+import { Route as TeamRegisterRouteImport } from './routes/team/register'
+import { Route as AdminTeamsRouteImport } from './routes/admin/teams'
+import { Route as AdminTeamRequestsRouteImport } from './routes/admin/team-requests'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as TeamTeamIdTurnoverRouteImport } from './routes/team/$teamId/turnover'
+import { Route as TeamTeamIdScorecardRouteImport } from './routes/team/$teamId/scorecard'
+import { Route as TeamTeamIdLinksRouteImport } from './routes/team/$teamId/links'
+import { Route as TeamTeamIdDashboardRouteImport } from './routes/team/$teamId/dashboard'
+import { Route as TeamTeamIdApplicationsRouteImport } from './routes/team/$teamId/applications'
+import { Route as TeamTeamIdLinksIndexRouteImport } from './routes/team/$teamId/links/index'
+import { Route as TeamTeamIdTohubViewTurnoverHubRouteImport } from './routes/team/$teamId/tohub/view-turnover-hub'
+import { Route as TeamTeamIdTohubTurnoverHistoryRouteImport } from './routes/team/$teamId/tohub/turnover-history'
+import { Route as TeamTeamIdTohubSubApplicationsRouteImport } from './routes/team/$teamId/tohub/sub-applications'
+import { Route as TeamTeamIdTohubStatisticsRouteImport } from './routes/team/$teamId/tohub/statistics'
+import { Route as TeamTeamIdTohubPassTheBatonRouteImport } from './routes/team/$teamId/tohub/pass-the-baton'
+import { Route as TeamTeamIdTohubAutomationRouteImport } from './routes/team/$teamId/tohub/automation'
+import { Route as TeamTeamIdLinksPublicRouteImport } from './routes/team/$teamId/links/public'
+import { Route as TeamTeamIdLinksPrivateRouteImport } from './routes/team/$teamId/links/private'
+import { Route as TeamTeamIdLinksPinnedRouteImport } from './routes/team/$teamId/links/pinned'
+import { Route as TeamTeamIdLinksImportRouteImport } from './routes/team/$teamId/links/import'
+import { Route as TeamTeamIdLinksAllLinksRouteImport } from './routes/team/$teamId/links/all-links'
+import { Route as TeamTeamIdApplicationsManageRouteImport } from './routes/team/$teamId/applications/manage'
+import { Route as TeamTeamIdApplicationsApplicationIdRouteImport } from './routes/team/$teamId/applications/$applicationId'
+import { Route as TeamTeamIdLinksCategoryCategoryIdRouteImport } from './routes/team/$teamId/links/category/$categoryId'
+import { Route as TeamTeamIdLinksApplicationApplicationIdRouteImport } from './routes/team/$teamId/links/application/$applicationId'
+import { Route as TeamTeamIdApplicationsApplicationIdEditRouteImport } from './routes/team/$teamId/applications/$applicationId/edit'
 
+const TeamConfirmationRoute = TeamConfirmationRouteImport.update({
+  id: '/team-confirmation',
+  path: '/team-confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
-  id: '/demo/tanstack-query',
-  path: '/demo/tanstack-query',
+const TeamRegisterRoute = TeamRegisterRouteImport.update({
+  id: '/team/register',
+  path: '/team/register',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
-  id: '/demo/start/server-funcs',
-  path: '/demo/start/server-funcs',
+const AdminTeamsRoute = AdminTeamsRouteImport.update({
+  id: '/admin/teams',
+  path: '/admin/teams',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartApiRequestRoute = DemoStartApiRequestRouteImport.update({
-  id: '/demo/start/api-request',
-  path: '/demo/start/api-request',
+const AdminTeamRequestsRoute = AdminTeamRequestsRouteImport.update({
+  id: '/admin/team-requests',
+  path: '/admin/team-requests',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoApiTqTodosRoute = DemoApiTqTodosRouteImport.update({
-  id: '/demo/api/tq-todos',
-  path: '/demo/api/tq-todos',
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoApiNamesRoute = DemoApiNamesRouteImport.update({
-  id: '/demo/api/names',
-  path: '/demo/api/names',
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartSsrIndexRoute = DemoStartSsrIndexRouteImport.update({
-  id: '/demo/start/ssr/',
-  path: '/demo/start/ssr/',
+const TeamTeamIdTurnoverRoute = TeamTeamIdTurnoverRouteImport.update({
+  id: '/team/$teamId/turnover',
+  path: '/team/$teamId/turnover',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartSsrSpaModeRoute = DemoStartSsrSpaModeRouteImport.update({
-  id: '/demo/start/ssr/spa-mode',
-  path: '/demo/start/ssr/spa-mode',
+const TeamTeamIdScorecardRoute = TeamTeamIdScorecardRouteImport.update({
+  id: '/team/$teamId/scorecard',
+  path: '/team/$teamId/scorecard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartSsrFullSsrRoute = DemoStartSsrFullSsrRouteImport.update({
-  id: '/demo/start/ssr/full-ssr',
-  path: '/demo/start/ssr/full-ssr',
+const TeamTeamIdLinksRoute = TeamTeamIdLinksRouteImport.update({
+  id: '/team/$teamId/links',
+  path: '/team/$teamId/links',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
-  id: '/demo/start/ssr/data-only',
-  path: '/demo/start/ssr/data-only',
+const TeamTeamIdDashboardRoute = TeamTeamIdDashboardRouteImport.update({
+  id: '/team/$teamId/dashboard',
+  path: '/team/$teamId/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamTeamIdApplicationsRoute = TeamTeamIdApplicationsRouteImport.update({
+  id: '/team/$teamId/applications',
+  path: '/team/$teamId/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamTeamIdLinksIndexRoute = TeamTeamIdLinksIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdTohubViewTurnoverHubRoute =
+  TeamTeamIdTohubViewTurnoverHubRouteImport.update({
+    id: '/team/$teamId/tohub/view-turnover-hub',
+    path: '/team/$teamId/tohub/view-turnover-hub',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdTohubTurnoverHistoryRoute =
+  TeamTeamIdTohubTurnoverHistoryRouteImport.update({
+    id: '/team/$teamId/tohub/turnover-history',
+    path: '/team/$teamId/tohub/turnover-history',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdTohubSubApplicationsRoute =
+  TeamTeamIdTohubSubApplicationsRouteImport.update({
+    id: '/team/$teamId/tohub/sub-applications',
+    path: '/team/$teamId/tohub/sub-applications',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdTohubStatisticsRoute =
+  TeamTeamIdTohubStatisticsRouteImport.update({
+    id: '/team/$teamId/tohub/statistics',
+    path: '/team/$teamId/tohub/statistics',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdTohubPassTheBatonRoute =
+  TeamTeamIdTohubPassTheBatonRouteImport.update({
+    id: '/team/$teamId/tohub/pass-the-baton',
+    path: '/team/$teamId/tohub/pass-the-baton',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdTohubAutomationRoute =
+  TeamTeamIdTohubAutomationRouteImport.update({
+    id: '/team/$teamId/tohub/automation',
+    path: '/team/$teamId/tohub/automation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TeamTeamIdLinksPublicRoute = TeamTeamIdLinksPublicRouteImport.update({
+  id: '/public',
+  path: '/public',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdLinksPrivateRoute = TeamTeamIdLinksPrivateRouteImport.update({
+  id: '/private',
+  path: '/private',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdLinksPinnedRoute = TeamTeamIdLinksPinnedRouteImport.update({
+  id: '/pinned',
+  path: '/pinned',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdLinksImportRoute = TeamTeamIdLinksImportRouteImport.update({
+  id: '/import',
+  path: '/import',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdLinksAllLinksRoute = TeamTeamIdLinksAllLinksRouteImport.update({
+  id: '/all-links',
+  path: '/all-links',
+  getParentRoute: () => TeamTeamIdLinksRoute,
+} as any)
+const TeamTeamIdApplicationsManageRoute =
+  TeamTeamIdApplicationsManageRouteImport.update({
+    id: '/manage',
+    path: '/manage',
+    getParentRoute: () => TeamTeamIdApplicationsRoute,
+  } as any)
+const TeamTeamIdApplicationsApplicationIdRoute =
+  TeamTeamIdApplicationsApplicationIdRouteImport.update({
+    id: '/$applicationId',
+    path: '/$applicationId',
+    getParentRoute: () => TeamTeamIdApplicationsRoute,
+  } as any)
+const TeamTeamIdLinksCategoryCategoryIdRoute =
+  TeamTeamIdLinksCategoryCategoryIdRouteImport.update({
+    id: '/category/$categoryId',
+    path: '/category/$categoryId',
+    getParentRoute: () => TeamTeamIdLinksRoute,
+  } as any)
+const TeamTeamIdLinksApplicationApplicationIdRoute =
+  TeamTeamIdLinksApplicationApplicationIdRouteImport.update({
+    id: '/application/$applicationId',
+    path: '/application/$applicationId',
+    getParentRoute: () => TeamTeamIdLinksRoute,
+  } as any)
+const TeamTeamIdApplicationsApplicationIdEditRoute =
+  TeamTeamIdApplicationsApplicationIdEditRouteImport.update({
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => TeamTeamIdApplicationsApplicationIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr': typeof DemoStartSsrIndexRoute
+  '/team-confirmation': typeof TeamConfirmationRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/team-requests': typeof AdminTeamRequestsRoute
+  '/admin/teams': typeof AdminTeamsRoute
+  '/team/register': typeof TeamRegisterRoute
+  '/team/$teamId/applications': typeof TeamTeamIdApplicationsRouteWithChildren
+  '/team/$teamId/dashboard': typeof TeamTeamIdDashboardRoute
+  '/team/$teamId/links': typeof TeamTeamIdLinksRouteWithChildren
+  '/team/$teamId/scorecard': typeof TeamTeamIdScorecardRoute
+  '/team/$teamId/turnover': typeof TeamTeamIdTurnoverRoute
+  '/team/$teamId/applications/$applicationId': typeof TeamTeamIdApplicationsApplicationIdRouteWithChildren
+  '/team/$teamId/applications/manage': typeof TeamTeamIdApplicationsManageRoute
+  '/team/$teamId/links/all-links': typeof TeamTeamIdLinksAllLinksRoute
+  '/team/$teamId/links/import': typeof TeamTeamIdLinksImportRoute
+  '/team/$teamId/links/pinned': typeof TeamTeamIdLinksPinnedRoute
+  '/team/$teamId/links/private': typeof TeamTeamIdLinksPrivateRoute
+  '/team/$teamId/links/public': typeof TeamTeamIdLinksPublicRoute
+  '/team/$teamId/tohub/automation': typeof TeamTeamIdTohubAutomationRoute
+  '/team/$teamId/tohub/pass-the-baton': typeof TeamTeamIdTohubPassTheBatonRoute
+  '/team/$teamId/tohub/statistics': typeof TeamTeamIdTohubStatisticsRoute
+  '/team/$teamId/tohub/sub-applications': typeof TeamTeamIdTohubSubApplicationsRoute
+  '/team/$teamId/tohub/turnover-history': typeof TeamTeamIdTohubTurnoverHistoryRoute
+  '/team/$teamId/tohub/view-turnover-hub': typeof TeamTeamIdTohubViewTurnoverHubRoute
+  '/team/$teamId/links/': typeof TeamTeamIdLinksIndexRoute
+  '/team/$teamId/applications/$applicationId/edit': typeof TeamTeamIdApplicationsApplicationIdEditRoute
+  '/team/$teamId/links/application/$applicationId': typeof TeamTeamIdLinksApplicationApplicationIdRoute
+  '/team/$teamId/links/category/$categoryId': typeof TeamTeamIdLinksCategoryCategoryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr': typeof DemoStartSsrIndexRoute
+  '/team-confirmation': typeof TeamConfirmationRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/team-requests': typeof AdminTeamRequestsRoute
+  '/admin/teams': typeof AdminTeamsRoute
+  '/team/register': typeof TeamRegisterRoute
+  '/team/$teamId/applications': typeof TeamTeamIdApplicationsRouteWithChildren
+  '/team/$teamId/dashboard': typeof TeamTeamIdDashboardRoute
+  '/team/$teamId/scorecard': typeof TeamTeamIdScorecardRoute
+  '/team/$teamId/turnover': typeof TeamTeamIdTurnoverRoute
+  '/team/$teamId/applications/$applicationId': typeof TeamTeamIdApplicationsApplicationIdRouteWithChildren
+  '/team/$teamId/applications/manage': typeof TeamTeamIdApplicationsManageRoute
+  '/team/$teamId/links/all-links': typeof TeamTeamIdLinksAllLinksRoute
+  '/team/$teamId/links/import': typeof TeamTeamIdLinksImportRoute
+  '/team/$teamId/links/pinned': typeof TeamTeamIdLinksPinnedRoute
+  '/team/$teamId/links/private': typeof TeamTeamIdLinksPrivateRoute
+  '/team/$teamId/links/public': typeof TeamTeamIdLinksPublicRoute
+  '/team/$teamId/tohub/automation': typeof TeamTeamIdTohubAutomationRoute
+  '/team/$teamId/tohub/pass-the-baton': typeof TeamTeamIdTohubPassTheBatonRoute
+  '/team/$teamId/tohub/statistics': typeof TeamTeamIdTohubStatisticsRoute
+  '/team/$teamId/tohub/sub-applications': typeof TeamTeamIdTohubSubApplicationsRoute
+  '/team/$teamId/tohub/turnover-history': typeof TeamTeamIdTohubTurnoverHistoryRoute
+  '/team/$teamId/tohub/view-turnover-hub': typeof TeamTeamIdTohubViewTurnoverHubRoute
+  '/team/$teamId/links': typeof TeamTeamIdLinksIndexRoute
+  '/team/$teamId/applications/$applicationId/edit': typeof TeamTeamIdApplicationsApplicationIdEditRoute
+  '/team/$teamId/links/application/$applicationId': typeof TeamTeamIdLinksApplicationApplicationIdRoute
+  '/team/$teamId/links/category/$categoryId': typeof TeamTeamIdLinksCategoryCategoryIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/demo/api/names': typeof DemoApiNamesRoute
-  '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
-  '/demo/start/api-request': typeof DemoStartApiRequestRoute
-  '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
-  '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
-  '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
-  '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
-  '/demo/start/ssr/': typeof DemoStartSsrIndexRoute
+  '/team-confirmation': typeof TeamConfirmationRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/team-requests': typeof AdminTeamRequestsRoute
+  '/admin/teams': typeof AdminTeamsRoute
+  '/team/register': typeof TeamRegisterRoute
+  '/team/$teamId/applications': typeof TeamTeamIdApplicationsRouteWithChildren
+  '/team/$teamId/dashboard': typeof TeamTeamIdDashboardRoute
+  '/team/$teamId/links': typeof TeamTeamIdLinksRouteWithChildren
+  '/team/$teamId/scorecard': typeof TeamTeamIdScorecardRoute
+  '/team/$teamId/turnover': typeof TeamTeamIdTurnoverRoute
+  '/team/$teamId/applications/$applicationId': typeof TeamTeamIdApplicationsApplicationIdRouteWithChildren
+  '/team/$teamId/applications/manage': typeof TeamTeamIdApplicationsManageRoute
+  '/team/$teamId/links/all-links': typeof TeamTeamIdLinksAllLinksRoute
+  '/team/$teamId/links/import': typeof TeamTeamIdLinksImportRoute
+  '/team/$teamId/links/pinned': typeof TeamTeamIdLinksPinnedRoute
+  '/team/$teamId/links/private': typeof TeamTeamIdLinksPrivateRoute
+  '/team/$teamId/links/public': typeof TeamTeamIdLinksPublicRoute
+  '/team/$teamId/tohub/automation': typeof TeamTeamIdTohubAutomationRoute
+  '/team/$teamId/tohub/pass-the-baton': typeof TeamTeamIdTohubPassTheBatonRoute
+  '/team/$teamId/tohub/statistics': typeof TeamTeamIdTohubStatisticsRoute
+  '/team/$teamId/tohub/sub-applications': typeof TeamTeamIdTohubSubApplicationsRoute
+  '/team/$teamId/tohub/turnover-history': typeof TeamTeamIdTohubTurnoverHistoryRoute
+  '/team/$teamId/tohub/view-turnover-hub': typeof TeamTeamIdTohubViewTurnoverHubRoute
+  '/team/$teamId/links/': typeof TeamTeamIdLinksIndexRoute
+  '/team/$teamId/applications/$applicationId/edit': typeof TeamTeamIdApplicationsApplicationIdEditRoute
+  '/team/$teamId/links/application/$applicationId': typeof TeamTeamIdLinksApplicationApplicationIdRoute
+  '/team/$teamId/links/category/$categoryId': typeof TeamTeamIdLinksCategoryCategoryIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/demo/tanstack-query'
-    | '/demo/api/names'
-    | '/demo/api/tq-todos'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr'
+    | '/team-confirmation'
+    | '/admin/dashboard'
+    | '/admin/settings'
+    | '/admin/team-requests'
+    | '/admin/teams'
+    | '/team/register'
+    | '/team/$teamId/applications'
+    | '/team/$teamId/dashboard'
+    | '/team/$teamId/links'
+    | '/team/$teamId/scorecard'
+    | '/team/$teamId/turnover'
+    | '/team/$teamId/applications/$applicationId'
+    | '/team/$teamId/applications/manage'
+    | '/team/$teamId/links/all-links'
+    | '/team/$teamId/links/import'
+    | '/team/$teamId/links/pinned'
+    | '/team/$teamId/links/private'
+    | '/team/$teamId/links/public'
+    | '/team/$teamId/tohub/automation'
+    | '/team/$teamId/tohub/pass-the-baton'
+    | '/team/$teamId/tohub/statistics'
+    | '/team/$teamId/tohub/sub-applications'
+    | '/team/$teamId/tohub/turnover-history'
+    | '/team/$teamId/tohub/view-turnover-hub'
+    | '/team/$teamId/links/'
+    | '/team/$teamId/applications/$applicationId/edit'
+    | '/team/$teamId/links/application/$applicationId'
+    | '/team/$teamId/links/category/$categoryId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/demo/tanstack-query'
-    | '/demo/api/names'
-    | '/demo/api/tq-todos'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr'
+    | '/team-confirmation'
+    | '/admin/dashboard'
+    | '/admin/settings'
+    | '/admin/team-requests'
+    | '/admin/teams'
+    | '/team/register'
+    | '/team/$teamId/applications'
+    | '/team/$teamId/dashboard'
+    | '/team/$teamId/scorecard'
+    | '/team/$teamId/turnover'
+    | '/team/$teamId/applications/$applicationId'
+    | '/team/$teamId/applications/manage'
+    | '/team/$teamId/links/all-links'
+    | '/team/$teamId/links/import'
+    | '/team/$teamId/links/pinned'
+    | '/team/$teamId/links/private'
+    | '/team/$teamId/links/public'
+    | '/team/$teamId/tohub/automation'
+    | '/team/$teamId/tohub/pass-the-baton'
+    | '/team/$teamId/tohub/statistics'
+    | '/team/$teamId/tohub/sub-applications'
+    | '/team/$teamId/tohub/turnover-history'
+    | '/team/$teamId/tohub/view-turnover-hub'
+    | '/team/$teamId/links'
+    | '/team/$teamId/applications/$applicationId/edit'
+    | '/team/$teamId/links/application/$applicationId'
+    | '/team/$teamId/links/category/$categoryId'
   id:
     | '__root__'
     | '/'
-    | '/demo/tanstack-query'
-    | '/demo/api/names'
-    | '/demo/api/tq-todos'
-    | '/demo/start/api-request'
-    | '/demo/start/server-funcs'
-    | '/demo/start/ssr/data-only'
-    | '/demo/start/ssr/full-ssr'
-    | '/demo/start/ssr/spa-mode'
-    | '/demo/start/ssr/'
+    | '/team-confirmation'
+    | '/admin/dashboard'
+    | '/admin/settings'
+    | '/admin/team-requests'
+    | '/admin/teams'
+    | '/team/register'
+    | '/team/$teamId/applications'
+    | '/team/$teamId/dashboard'
+    | '/team/$teamId/links'
+    | '/team/$teamId/scorecard'
+    | '/team/$teamId/turnover'
+    | '/team/$teamId/applications/$applicationId'
+    | '/team/$teamId/applications/manage'
+    | '/team/$teamId/links/all-links'
+    | '/team/$teamId/links/import'
+    | '/team/$teamId/links/pinned'
+    | '/team/$teamId/links/private'
+    | '/team/$teamId/links/public'
+    | '/team/$teamId/tohub/automation'
+    | '/team/$teamId/tohub/pass-the-baton'
+    | '/team/$teamId/tohub/statistics'
+    | '/team/$teamId/tohub/sub-applications'
+    | '/team/$teamId/tohub/turnover-history'
+    | '/team/$teamId/tohub/view-turnover-hub'
+    | '/team/$teamId/links/'
+    | '/team/$teamId/applications/$applicationId/edit'
+    | '/team/$teamId/links/application/$applicationId'
+    | '/team/$teamId/links/category/$categoryId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
-  DemoApiNamesRoute: typeof DemoApiNamesRoute
-  DemoApiTqTodosRoute: typeof DemoApiTqTodosRoute
-  DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
-  DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
-  DemoStartSsrDataOnlyRoute: typeof DemoStartSsrDataOnlyRoute
-  DemoStartSsrFullSsrRoute: typeof DemoStartSsrFullSsrRoute
-  DemoStartSsrSpaModeRoute: typeof DemoStartSsrSpaModeRoute
-  DemoStartSsrIndexRoute: typeof DemoStartSsrIndexRoute
+  TeamConfirmationRoute: typeof TeamConfirmationRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminTeamRequestsRoute: typeof AdminTeamRequestsRoute
+  AdminTeamsRoute: typeof AdminTeamsRoute
+  TeamRegisterRoute: typeof TeamRegisterRoute
+  TeamTeamIdApplicationsRoute: typeof TeamTeamIdApplicationsRouteWithChildren
+  TeamTeamIdDashboardRoute: typeof TeamTeamIdDashboardRoute
+  TeamTeamIdLinksRoute: typeof TeamTeamIdLinksRouteWithChildren
+  TeamTeamIdScorecardRoute: typeof TeamTeamIdScorecardRoute
+  TeamTeamIdTurnoverRoute: typeof TeamTeamIdTurnoverRoute
+  TeamTeamIdTohubAutomationRoute: typeof TeamTeamIdTohubAutomationRoute
+  TeamTeamIdTohubPassTheBatonRoute: typeof TeamTeamIdTohubPassTheBatonRoute
+  TeamTeamIdTohubStatisticsRoute: typeof TeamTeamIdTohubStatisticsRoute
+  TeamTeamIdTohubSubApplicationsRoute: typeof TeamTeamIdTohubSubApplicationsRoute
+  TeamTeamIdTohubTurnoverHistoryRoute: typeof TeamTeamIdTohubTurnoverHistoryRoute
+  TeamTeamIdTohubViewTurnoverHubRoute: typeof TeamTeamIdTohubViewTurnoverHubRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/team-confirmation': {
+      id: '/team-confirmation'
+      path: '/team-confirmation'
+      fullPath: '/team-confirmation'
+      preLoaderRoute: typeof TeamConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -169,83 +421,277 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/tanstack-query': {
-      id: '/demo/tanstack-query'
-      path: '/demo/tanstack-query'
-      fullPath: '/demo/tanstack-query'
-      preLoaderRoute: typeof DemoTanstackQueryRouteImport
+    '/team/register': {
+      id: '/team/register'
+      path: '/team/register'
+      fullPath: '/team/register'
+      preLoaderRoute: typeof TeamRegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/server-funcs': {
-      id: '/demo/start/server-funcs'
-      path: '/demo/start/server-funcs'
-      fullPath: '/demo/start/server-funcs'
-      preLoaderRoute: typeof DemoStartServerFuncsRouteImport
+    '/admin/teams': {
+      id: '/admin/teams'
+      path: '/admin/teams'
+      fullPath: '/admin/teams'
+      preLoaderRoute: typeof AdminTeamsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/api-request': {
-      id: '/demo/start/api-request'
-      path: '/demo/start/api-request'
-      fullPath: '/demo/start/api-request'
-      preLoaderRoute: typeof DemoStartApiRequestRouteImport
+    '/admin/team-requests': {
+      id: '/admin/team-requests'
+      path: '/admin/team-requests'
+      fullPath: '/admin/team-requests'
+      preLoaderRoute: typeof AdminTeamRequestsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/api/tq-todos': {
-      id: '/demo/api/tq-todos'
-      path: '/demo/api/tq-todos'
-      fullPath: '/demo/api/tq-todos'
-      preLoaderRoute: typeof DemoApiTqTodosRouteImport
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/api/names': {
-      id: '/demo/api/names'
-      path: '/demo/api/names'
-      fullPath: '/demo/api/names'
-      preLoaderRoute: typeof DemoApiNamesRouteImport
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/ssr/': {
-      id: '/demo/start/ssr/'
-      path: '/demo/start/ssr'
-      fullPath: '/demo/start/ssr'
-      preLoaderRoute: typeof DemoStartSsrIndexRouteImport
+    '/team/$teamId/turnover': {
+      id: '/team/$teamId/turnover'
+      path: '/team/$teamId/turnover'
+      fullPath: '/team/$teamId/turnover'
+      preLoaderRoute: typeof TeamTeamIdTurnoverRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/ssr/spa-mode': {
-      id: '/demo/start/ssr/spa-mode'
-      path: '/demo/start/ssr/spa-mode'
-      fullPath: '/demo/start/ssr/spa-mode'
-      preLoaderRoute: typeof DemoStartSsrSpaModeRouteImport
+    '/team/$teamId/scorecard': {
+      id: '/team/$teamId/scorecard'
+      path: '/team/$teamId/scorecard'
+      fullPath: '/team/$teamId/scorecard'
+      preLoaderRoute: typeof TeamTeamIdScorecardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/ssr/full-ssr': {
-      id: '/demo/start/ssr/full-ssr'
-      path: '/demo/start/ssr/full-ssr'
-      fullPath: '/demo/start/ssr/full-ssr'
-      preLoaderRoute: typeof DemoStartSsrFullSsrRouteImport
+    '/team/$teamId/links': {
+      id: '/team/$teamId/links'
+      path: '/team/$teamId/links'
+      fullPath: '/team/$teamId/links'
+      preLoaderRoute: typeof TeamTeamIdLinksRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/start/ssr/data-only': {
-      id: '/demo/start/ssr/data-only'
-      path: '/demo/start/ssr/data-only'
-      fullPath: '/demo/start/ssr/data-only'
-      preLoaderRoute: typeof DemoStartSsrDataOnlyRouteImport
+    '/team/$teamId/dashboard': {
+      id: '/team/$teamId/dashboard'
+      path: '/team/$teamId/dashboard'
+      fullPath: '/team/$teamId/dashboard'
+      preLoaderRoute: typeof TeamTeamIdDashboardRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/applications': {
+      id: '/team/$teamId/applications'
+      path: '/team/$teamId/applications'
+      fullPath: '/team/$teamId/applications'
+      preLoaderRoute: typeof TeamTeamIdApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/links/': {
+      id: '/team/$teamId/links/'
+      path: '/'
+      fullPath: '/team/$teamId/links/'
+      preLoaderRoute: typeof TeamTeamIdLinksIndexRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/tohub/view-turnover-hub': {
+      id: '/team/$teamId/tohub/view-turnover-hub'
+      path: '/team/$teamId/tohub/view-turnover-hub'
+      fullPath: '/team/$teamId/tohub/view-turnover-hub'
+      preLoaderRoute: typeof TeamTeamIdTohubViewTurnoverHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/tohub/turnover-history': {
+      id: '/team/$teamId/tohub/turnover-history'
+      path: '/team/$teamId/tohub/turnover-history'
+      fullPath: '/team/$teamId/tohub/turnover-history'
+      preLoaderRoute: typeof TeamTeamIdTohubTurnoverHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/tohub/sub-applications': {
+      id: '/team/$teamId/tohub/sub-applications'
+      path: '/team/$teamId/tohub/sub-applications'
+      fullPath: '/team/$teamId/tohub/sub-applications'
+      preLoaderRoute: typeof TeamTeamIdTohubSubApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/tohub/statistics': {
+      id: '/team/$teamId/tohub/statistics'
+      path: '/team/$teamId/tohub/statistics'
+      fullPath: '/team/$teamId/tohub/statistics'
+      preLoaderRoute: typeof TeamTeamIdTohubStatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/tohub/pass-the-baton': {
+      id: '/team/$teamId/tohub/pass-the-baton'
+      path: '/team/$teamId/tohub/pass-the-baton'
+      fullPath: '/team/$teamId/tohub/pass-the-baton'
+      preLoaderRoute: typeof TeamTeamIdTohubPassTheBatonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/tohub/automation': {
+      id: '/team/$teamId/tohub/automation'
+      path: '/team/$teamId/tohub/automation'
+      fullPath: '/team/$teamId/tohub/automation'
+      preLoaderRoute: typeof TeamTeamIdTohubAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$teamId/links/public': {
+      id: '/team/$teamId/links/public'
+      path: '/public'
+      fullPath: '/team/$teamId/links/public'
+      preLoaderRoute: typeof TeamTeamIdLinksPublicRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/links/private': {
+      id: '/team/$teamId/links/private'
+      path: '/private'
+      fullPath: '/team/$teamId/links/private'
+      preLoaderRoute: typeof TeamTeamIdLinksPrivateRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/links/pinned': {
+      id: '/team/$teamId/links/pinned'
+      path: '/pinned'
+      fullPath: '/team/$teamId/links/pinned'
+      preLoaderRoute: typeof TeamTeamIdLinksPinnedRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/links/import': {
+      id: '/team/$teamId/links/import'
+      path: '/import'
+      fullPath: '/team/$teamId/links/import'
+      preLoaderRoute: typeof TeamTeamIdLinksImportRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/links/all-links': {
+      id: '/team/$teamId/links/all-links'
+      path: '/all-links'
+      fullPath: '/team/$teamId/links/all-links'
+      preLoaderRoute: typeof TeamTeamIdLinksAllLinksRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/applications/manage': {
+      id: '/team/$teamId/applications/manage'
+      path: '/manage'
+      fullPath: '/team/$teamId/applications/manage'
+      preLoaderRoute: typeof TeamTeamIdApplicationsManageRouteImport
+      parentRoute: typeof TeamTeamIdApplicationsRoute
+    }
+    '/team/$teamId/applications/$applicationId': {
+      id: '/team/$teamId/applications/$applicationId'
+      path: '/$applicationId'
+      fullPath: '/team/$teamId/applications/$applicationId'
+      preLoaderRoute: typeof TeamTeamIdApplicationsApplicationIdRouteImport
+      parentRoute: typeof TeamTeamIdApplicationsRoute
+    }
+    '/team/$teamId/links/category/$categoryId': {
+      id: '/team/$teamId/links/category/$categoryId'
+      path: '/category/$categoryId'
+      fullPath: '/team/$teamId/links/category/$categoryId'
+      preLoaderRoute: typeof TeamTeamIdLinksCategoryCategoryIdRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/links/application/$applicationId': {
+      id: '/team/$teamId/links/application/$applicationId'
+      path: '/application/$applicationId'
+      fullPath: '/team/$teamId/links/application/$applicationId'
+      preLoaderRoute: typeof TeamTeamIdLinksApplicationApplicationIdRouteImport
+      parentRoute: typeof TeamTeamIdLinksRoute
+    }
+    '/team/$teamId/applications/$applicationId/edit': {
+      id: '/team/$teamId/applications/$applicationId/edit'
+      path: '/edit'
+      fullPath: '/team/$teamId/applications/$applicationId/edit'
+      preLoaderRoute: typeof TeamTeamIdApplicationsApplicationIdEditRouteImport
+      parentRoute: typeof TeamTeamIdApplicationsApplicationIdRoute
     }
   }
 }
 
+interface TeamTeamIdApplicationsApplicationIdRouteChildren {
+  TeamTeamIdApplicationsApplicationIdEditRoute: typeof TeamTeamIdApplicationsApplicationIdEditRoute
+}
+
+const TeamTeamIdApplicationsApplicationIdRouteChildren: TeamTeamIdApplicationsApplicationIdRouteChildren =
+  {
+    TeamTeamIdApplicationsApplicationIdEditRoute:
+      TeamTeamIdApplicationsApplicationIdEditRoute,
+  }
+
+const TeamTeamIdApplicationsApplicationIdRouteWithChildren =
+  TeamTeamIdApplicationsApplicationIdRoute._addFileChildren(
+    TeamTeamIdApplicationsApplicationIdRouteChildren,
+  )
+
+interface TeamTeamIdApplicationsRouteChildren {
+  TeamTeamIdApplicationsApplicationIdRoute: typeof TeamTeamIdApplicationsApplicationIdRouteWithChildren
+  TeamTeamIdApplicationsManageRoute: typeof TeamTeamIdApplicationsManageRoute
+}
+
+const TeamTeamIdApplicationsRouteChildren: TeamTeamIdApplicationsRouteChildren =
+  {
+    TeamTeamIdApplicationsApplicationIdRoute:
+      TeamTeamIdApplicationsApplicationIdRouteWithChildren,
+    TeamTeamIdApplicationsManageRoute: TeamTeamIdApplicationsManageRoute,
+  }
+
+const TeamTeamIdApplicationsRouteWithChildren =
+  TeamTeamIdApplicationsRoute._addFileChildren(
+    TeamTeamIdApplicationsRouteChildren,
+  )
+
+interface TeamTeamIdLinksRouteChildren {
+  TeamTeamIdLinksAllLinksRoute: typeof TeamTeamIdLinksAllLinksRoute
+  TeamTeamIdLinksImportRoute: typeof TeamTeamIdLinksImportRoute
+  TeamTeamIdLinksPinnedRoute: typeof TeamTeamIdLinksPinnedRoute
+  TeamTeamIdLinksPrivateRoute: typeof TeamTeamIdLinksPrivateRoute
+  TeamTeamIdLinksPublicRoute: typeof TeamTeamIdLinksPublicRoute
+  TeamTeamIdLinksIndexRoute: typeof TeamTeamIdLinksIndexRoute
+  TeamTeamIdLinksApplicationApplicationIdRoute: typeof TeamTeamIdLinksApplicationApplicationIdRoute
+  TeamTeamIdLinksCategoryCategoryIdRoute: typeof TeamTeamIdLinksCategoryCategoryIdRoute
+}
+
+const TeamTeamIdLinksRouteChildren: TeamTeamIdLinksRouteChildren = {
+  TeamTeamIdLinksAllLinksRoute: TeamTeamIdLinksAllLinksRoute,
+  TeamTeamIdLinksImportRoute: TeamTeamIdLinksImportRoute,
+  TeamTeamIdLinksPinnedRoute: TeamTeamIdLinksPinnedRoute,
+  TeamTeamIdLinksPrivateRoute: TeamTeamIdLinksPrivateRoute,
+  TeamTeamIdLinksPublicRoute: TeamTeamIdLinksPublicRoute,
+  TeamTeamIdLinksIndexRoute: TeamTeamIdLinksIndexRoute,
+  TeamTeamIdLinksApplicationApplicationIdRoute:
+    TeamTeamIdLinksApplicationApplicationIdRoute,
+  TeamTeamIdLinksCategoryCategoryIdRoute:
+    TeamTeamIdLinksCategoryCategoryIdRoute,
+}
+
+const TeamTeamIdLinksRouteWithChildren = TeamTeamIdLinksRoute._addFileChildren(
+  TeamTeamIdLinksRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DemoTanstackQueryRoute: DemoTanstackQueryRoute,
-  DemoApiNamesRoute: DemoApiNamesRoute,
-  DemoApiTqTodosRoute: DemoApiTqTodosRoute,
-  DemoStartApiRequestRoute: DemoStartApiRequestRoute,
-  DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,
-  DemoStartSsrDataOnlyRoute: DemoStartSsrDataOnlyRoute,
-  DemoStartSsrFullSsrRoute: DemoStartSsrFullSsrRoute,
-  DemoStartSsrSpaModeRoute: DemoStartSsrSpaModeRoute,
-  DemoStartSsrIndexRoute: DemoStartSsrIndexRoute,
+  TeamConfirmationRoute: TeamConfirmationRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminTeamRequestsRoute: AdminTeamRequestsRoute,
+  AdminTeamsRoute: AdminTeamsRoute,
+  TeamRegisterRoute: TeamRegisterRoute,
+  TeamTeamIdApplicationsRoute: TeamTeamIdApplicationsRouteWithChildren,
+  TeamTeamIdDashboardRoute: TeamTeamIdDashboardRoute,
+  TeamTeamIdLinksRoute: TeamTeamIdLinksRouteWithChildren,
+  TeamTeamIdScorecardRoute: TeamTeamIdScorecardRoute,
+  TeamTeamIdTurnoverRoute: TeamTeamIdTurnoverRoute,
+  TeamTeamIdTohubAutomationRoute: TeamTeamIdTohubAutomationRoute,
+  TeamTeamIdTohubPassTheBatonRoute: TeamTeamIdTohubPassTheBatonRoute,
+  TeamTeamIdTohubStatisticsRoute: TeamTeamIdTohubStatisticsRoute,
+  TeamTeamIdTohubSubApplicationsRoute: TeamTeamIdTohubSubApplicationsRoute,
+  TeamTeamIdTohubTurnoverHistoryRoute: TeamTeamIdTohubTurnoverHistoryRoute,
+  TeamTeamIdTohubViewTurnoverHubRoute: TeamTeamIdTohubViewTurnoverHubRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

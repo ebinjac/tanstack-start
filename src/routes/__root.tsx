@@ -6,13 +6,15 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
-import Header from '../components/Header'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import appCss from '../styles.css?url'
+import { ThemeProvider } from '@/components/theme-provider'
+import { AuthProvider } from '@/contexts/auth-context'
 
 import type { QueryClient } from '@tanstack/react-query'
+import { Toaster } from '@/components/ui/sonner'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -45,13 +47,21 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </ThemeProvider>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
@@ -65,6 +75,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           ]}
         />
         <Scripts />
+        <Toaster />
       </body>
     </html>
   )

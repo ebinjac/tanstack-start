@@ -13,6 +13,7 @@ export const getRouter = () => {
     routeTree,
     context: { ...rqContext },
     defaultPreload: 'intent',
+    defaultNotFoundComponent: () => <div>404</div>,
     Wrap: (props: { children: React.ReactNode }) => {
       return (
         <TanstackQuery.Provider {...rqContext}>

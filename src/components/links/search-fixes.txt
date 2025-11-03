@@ -1,0 +1,33 @@
+For each route file, apply these changes:
+
+1. Add useEffect to imports:
+import { Suspense, useState, useEffect } from 'react'
+
+2. Add debouncedSearchQuery state:
+const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('')
+
+3. Add debounce effect:
+// Debounce search query to avoid excessive API calls
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setDebouncedSearchQuery(searchQuery)
+  }, 300)
+
+  return () => clearTimeout(timer)
+}, [searchQuery])
+
+4. Update searchParams to use debouncedSearchQuery:
+...(isSearchActive && debouncedSearchQuery && { search: debouncedSearchQuery }),
+
+5. Update search input onChange:
+onChange={(e) => {
+  setSearchQuery(e.target.value)
+  setIsSearchActive(true)
+}}
+
+6. Update clearSearch function:
+const clearSearch = () => {
+  setSearchQuery('')
+  setDebouncedSearchQuery('')
+  setIsSearchActive(false)
+}
